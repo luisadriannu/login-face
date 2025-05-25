@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Bicubik";
+  src: url("./assets/fonts/bicubit/Bicubik-71qR.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "TT Lakes Neue";
+  src: url("./assets/fonts/lakes/TT\ Lakes\ Neue\ Trial\ Extended\ Regular.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "TT Lakes Neue";
+  src: url("./assets/fonts/lakes/TT\ Lakes\ Neue\ Trial\ Extended\ Medium.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Lakes Neue";
+  src: url("./assets/fonts/lakes/TT\ Lakes\ Neue\ Trial\ Extended\ Bold.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Lakes Neue";
+  src: url("./assets/fonts/lakes/TT\ Lakes\ Neue\ Trial\ Extended\ ExtraBold.ttf")
+    format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Letras efecto neón */
+@layer utilities {
+  .text-neon {
+    text-shadow: 0 0 5px #00bbde, 0 0 10px #00bbde, 0 0 20px #00bbde,
+      0 0 40px #00bbde;
+  }
+
+  .animate-flicker {
+    animation: flicker 1.5s infinite alternate;
+  }
+
+  @keyframes flicker {
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+      text-shadow: 0 0 5px #00bbde, 0 0 10px #00bbde, 0 0 20px #00bbde,
+        0 0 40px #38bdf8;
+    }
+    20%,
+    24%,
+    55% {
+      text-shadow: none;
+    }
+  }
+}
