@@ -1,8 +1,14 @@
 import { GetImageUrl } from "../utils/getImageUrl";
+import { motion } from "framer-motion";
 
 export const Menu = ({ isOpen, setIsOpen }) => {
   return (
-    <div className="relative h-screen me-24">
+    <motion.div
+      initial={{ x: -50, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="relative h-screen me-24"
+    >
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`absolute top-1/2 -translate-y-1/2 left-0 md:left-12 z-50 bg-[#062F37]
@@ -15,20 +21,26 @@ export const Menu = ({ isOpen, setIsOpen }) => {
           minWidth: "60px",
         }}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="28"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="text-cyan-300 mx-auto"
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
         >
-          <path d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="text-cyan-300 mx-auto"
+          >
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </motion.div>
       </button>
 
       <aside
@@ -44,16 +56,24 @@ export const Menu = ({ isOpen, setIsOpen }) => {
         {isOpen && (
           <div className="flex flex-col h-full gap-12">
             <div className="flex justify-center mt-4">
-              <img
+              <motion.img
                 src={GetImageUrl("logo", "png")}
                 alt="Logo"
                 className="w-55 mx-auto"
+                initial={{ x: -50, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
               />
             </div>
 
             <ul className="ms-8 mt-4 space-y-6 text-3xl font-medium tracking-widest font-bicubik">
               <li>
-                <div className="flex gap-4">
+                <motion.div
+                  initial={{ x: -50, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
+                  className="flex gap-4"
+                >
                   <img
                     src={GetImageUrl("marco-circular", "png")}
                     className="w-8"
@@ -65,37 +85,50 @@ export const Menu = ({ isOpen, setIsOpen }) => {
                   >
                     INICIO
                   </a>
-                </div>
+                </motion.div>
                 <img
                   src={GetImageUrl("tecnologia", "png")}
                   className={"w-40 ms-16"}
                   alt="Imagen de muestra"
                 />
               </li>
-              <li>
+              <motion.li
+                initial={{ x: -50, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+              >
                 <a
                   href="#"
                   className="inline-block hover:text-white transition-transform duration-400 hover:scale-105"
                 >
                   PERFIL
                 </a>
-              </li>
-              <li className="my-8">
+              </motion.li>
+              <motion.li
+                initial={{ x: -50, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+                className="my-8"
+              >
                 <a
                   href="#"
                   className="inline-block hover:text-white transition-transform duration-400 hover:scale-105"
                 >
                   MISIONES
                 </a>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li
+                initial={{ x: -50, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+              >
                 <a
                   href="#"
                   className="inline-block hover:text-white transition-transform duration-400 hover:scale-105"
                 >
                   REPORTES
                 </a>
-              </li>
+              </motion.li>
             </ul>
 
             {/* <div className="mb-6 flex justify-center ">
@@ -108,6 +141,6 @@ export const Menu = ({ isOpen, setIsOpen }) => {
           </div>
         )}
       </aside>
-    </div>
+    </motion.div>
   );
 };
