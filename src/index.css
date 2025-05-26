@@ -7,29 +7,37 @@
 
 @font-face {
   font-family: "TT Lakes Neue";
-  src: url("./assets/fonts/lakes/TT\ Lakes\ Neue\ Trial\ Extended\ Regular.ttf")
+  src: url("./assets/fonts/lakes/TT Lakes Neue Trial Extended Regular.ttf")
     format("truetype");
 }
 @font-face {
   font-family: "TT Lakes Neue";
-  src: url("./assets/fonts/lakes/TT\ Lakes\ Neue\ Trial\ Extended\ Medium.ttf")
+  src: url("./assets/fonts/lakes/TT Lakes Neue Trial Extended Medium.ttf")
     format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "TT Lakes Neue";
-  src: url("./assets/fonts/lakes/TT\ Lakes\ Neue\ Trial\ Extended\ Bold.ttf")
+  src: url("./assets/fonts/lakes/TT Lakes Neue Trial Extended Bold.ttf")
     format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "TT Lakes Neue";
-  src: url("./assets/fonts/lakes/TT\ Lakes\ Neue\ Trial\ Extended\ ExtraBold.ttf")
+  src: url("./assets/fonts/lakes/TT Lakes Neue Trial Extended ExtraBold.ttf")
     format("truetype");
   font-weight: 900;
   font-style: normal;
+}
+
+.font-bicubik {
+  font-family: "Bicubik";
+}
+
+body {
+  font-family: "TT Lakes Neue";
 }
 
 /* Letras efecto neón */

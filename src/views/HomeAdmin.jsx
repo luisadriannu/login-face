@@ -1,43 +1,111 @@
+import { useState } from "react";
 import { Menu } from "../components/Menu";
 import { GetImageUrl } from "../utils/getImageUrl";
 
 export const HomeAdmin = () => {
+  const [isOpen, setIsOpen] = useState(true);
   return (
     <article className="flex">
-      <Menu />
+      <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
 
-      {/* <div>
-        <div className="text-white flex items-center">
-          <img src={GetImageUrl("letras-fbi", "png")} alt="" />
-          <p>Agents</p>
+      <div
+        className={`flex flex-col gap-6 transition-all duration-300 ease-in-out h-fit my-auto  ${
+          isOpen ? "ml-80" : "ml-0"
+        } p-8 flex-1`}
+      >
+        <div className="text-white flex items-center gap-2">
+          <img
+            className="w-80"
+            src={GetImageUrl("letras-fbi", "png")}
+            alt="Imagen de muestra"
+          />
+          <p className="text-[#63DAF1] text-neon text-8xl font-bicubik">
+            AGENTS
+          </p>
         </div>
 
-        <div className="flex text-white gap-4">
+        <div className="flex items-center text-white gap-8">
           <div>
-            <p>Bienvenido agente</p>
-            <p>
-              Abigail <span>"Kitty patitas suaves"</span>
+            <h3 className="text-6xl font-ttLakes font-bold">
+              Bienvenido agente
+            </h3>
+            <p className="mt-2 text-3xl">
+              ABIGAIL <span>"Kitty patitas suaves"</span>
             </p>
           </div>
 
-          <button>Learn more</button>
+          <button
+            className="relative px-6 py-3 text-[#BBF8F9] font-medium transition hover:brightness-110 cursor-pointer z-10"
+            style={{
+              clipPath:
+                "polygon(14px 0%, calc(100% - 14px) 0%, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0% calc(100% - 14px), 0% 14px)",
+              backgroundColor: "#000",
+            }}
+          >
+            Learn more
+            <span
+              className="absolute inset-0 border-[3px] border-[#00afd0] z-[-1]"
+              style={{
+                clipPath:
+                  "polygon(14px 0%, calc(100% - 14px) 0%, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0% calc(100% - 14px), 0% 14px)",
+                borderRadius: "1.2rem",
+              }}
+            />
+          </button>
         </div>
 
-        <div className="flex text-white">
-          <div>
-            <img src={GetImageUrl("huella", "png")} alt="Imagen de muestra" />
-            <p>Criminal investigation</p>
+        <div className="flex items-center text-white gap-8">
+          <div className="relative w-60 h-60 transition-transform duration-400 hover:scale-105 cursor-pointer">
+            <img
+              className="absolute inset-0 w-full h-full "
+              src={GetImageUrl("marco", "png")}
+              alt="Marco"
+            />
+
+            <img
+              className="absolute top-10 left-1/2 transform -translate-x-1/2 w-28"
+              src={GetImageUrl("huella", "png")}
+              alt="Huella"
+            />
+
+            <p className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-center text-base font-semibold">
+              Criminal investigation
+            </p>
           </div>
-          <div>
-            <img src={GetImageUrl("admin", "png")} alt="Imagen de muestra" />
-            <p>View profile</p>
+
+          <div className="relative w-60 h-70 transition-transform duration-400 hover:scale-105 cursor-pointer">
+            <img
+              className="absolute inset-0 w-full h-full"
+              src={GetImageUrl("marco", "png")}
+              alt="Marco"
+            />
+            <img
+              className="absolute top-10 left-1/2 transform -translate-x-1/2 w-36"
+              src={GetImageUrl("admin", "png")}
+              alt="Admin"
+            />
+            <p className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-center text-base font-semibold">
+              View profile
+            </p>
           </div>
-          <div>
-            <img src={GetImageUrl("scam", "png")} alt="Imagen de muestra" />
-            <p>Report crime</p>
+
+          <div className="relative w-60 h-60 transition-transform duration-400 hover:scale-105 cursor-pointer">
+            <img
+              className="absolute inset-0 w-full h-full"
+              src={GetImageUrl("marco", "png")}
+              alt="Marco"
+            />
+            <img
+              className="absolute top-10 left-1/2 transform -translate-x-1/2 w-36"
+              src={GetImageUrl("scam", "png")}
+              alt="Scam"
+            />
+            <p className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-center text-base font-semibold">
+              Report crime
+            </p>
           </div>
         </div>
-      </div> */}
+      </div>
     </article>
   );
 };
