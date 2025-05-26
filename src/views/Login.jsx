@@ -63,19 +63,19 @@ export const Login = () => {
         </div>
       )}
 
-      <div className="flex absolute top-40 left-58 opacity-45">
+      <div className="flex absolute top-20 left-15 opacity-45">
         <img
-          className="w-90"
+          className="w-[250px]"
           src={GetImageUrl("tecnologia", "png")}
           alt="Imagen de muestra"
         />
         <img
-          className="w-90"
+          className="w-[250px]"
           src={GetImageUrl("tecnologia", "png")}
           alt="Imagen de muestra"
         />
         <img
-          className="w-90 absolute top-38"
+          className="w-[250px] absolute top-28"
           src={GetImageUrl("tecnologia", "png")}
           alt="Imagen de muestra"
         />
@@ -90,19 +90,19 @@ export const Login = () => {
         <p className="text-[#63DAF1] text-neon text-8xl font-bicubik">AGENTS</p>
       </div>
 
-      <div className="flex absolute bottom-20 left-58 opacity-45">
+      <div className="flex absolute bottom-10 left-28 opacity-45">
         <img
-          className="w-90"
+          className="w-[250px]"
           src={GetImageUrl("tecnologia", "png")}
           alt="Imagen de muestra"
         />
         <img
-          className="w-90"
+          className="w-[250px]"
           src={GetImageUrl("tecnologia", "png")}
           alt="Imagen de muestra"
         />
         <img
-          className="w-90 absolute bottom-38"
+          className="w-[250px] absolute bottom-26"
           src={GetImageUrl("tecnologia", "png")}
           alt="Imagen de muestra"
         />
