@@ -70,3 +70,18 @@ body {
     }
   }
 }
+@keyframes flicker {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.animate-flicker {
+  animation: flicker 0.5s infinite alternate;
+}

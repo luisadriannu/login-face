@@ -5,6 +5,7 @@ import { loadModel, predictFace } from "../utils/faceRecognition";
 export const Login = () => {
   const webcamRef = useRef(null);
   const [agentName, setAgentName] = useState("");
+  const [intruderAlert, setIntruderAlert] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -38,7 +39,7 @@ export const Login = () => {
     if (
       highestPrediction.className &&
       knownAgents.includes(highestPrediction.className.trim()) &&
-      highestPrediction.probability > 0.5
+      highestPrediction.probability > 0.8
     ) {
       setAgentName(highestPrediction.className);
 
@@ -48,32 +49,39 @@ export const Login = () => {
         navigate("/home-admin");
       }
     } else {
-      alert("Intruso detectado 😨");
+      setIntruderAlert(true);
+      setTimeout(() => setIntruderAlert(false), 3000); // 🔥 La alerta dura 3 segundos
     }
   };
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <h2 className="text-red-500 text-2xl">
-        {" "}
-        Login con Reconocimiento Facial
-      </h2>
+    <div className="flex flex-col items-center justify-center relative w-full h-screen bg-black text-white">
+      {intruderAlert && (
+        <div className="fixed top-0 left-0 w-full h-full bg-red-800 text-white text-6xl font-bold flex items-center justify-center animate-flicker">
+          🚨 INTRUSO DETECTADO 🚨
+        </div>
+      )}
 
+      <h2 className="text-red-500 text-2xl">Login con Reconocimiento Facial</h2>
+
+      {/* Cámara activada aquí */}
       <video
         ref={webcamRef}
         autoPlay
-        className="border-2 border-red-500"
+        className="border-4 border-red-500 shadow-lg"
+        width="400"
+        height="300"
       ></video>
 
       <button
         onClick={handleDetect}
-        className="bg-blue-500 text-white px-4 py-2 mt-4"
+        className="bg-blue-500 text-white px-6 py-3 mt-4 hover:bg-blue-700 transition-all duration-300"
       >
         Detectar
       </button>
 
       {agentName && (
-        <h2 className="text-green-500 text-xl mt-4">
+        <h2 className="text-green-500 text-2xl mt-4 font-mono">
           Acceso concedido a: {agentName}
         </h2>
       )}

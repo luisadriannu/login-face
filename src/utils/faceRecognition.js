@@ -1,7 +1,7 @@
 import * as tmImage from "@teachablemachine/image";
 
 const URL = "/public/model/";
-const MIN_PROBABILITY = 0.999; // 🔥 Umbral mínimo para aceptar una detección
+const MIN_PROBABILITY = 0.99; // 🔥 Umbral mínimo para aceptar una detección
 let model, maxPredictions;
 
 export const loadModel = async () => {
