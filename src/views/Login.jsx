@@ -9,7 +9,7 @@ export const Login = () => {
 
   useEffect(() => {
     loadModel();
-    startCamera(); // Llamamos a la función para activar la cámara
+    startCamera();
   }, []);
 
   const startCamera = async () => {
@@ -30,14 +30,11 @@ export const Login = () => {
       return;
     }
 
-    // 🔥 Ahora recibimos el objeto completo, no solo className
     const highestPrediction = await predictFace(webcamRef.current);
     console.log("Mayor probabilidad detectada:", highestPrediction);
 
-    // Lista de agentes conocidos
     const knownAgents = ["Abigail Miñano", "Luis Adrian"];
 
-    // ✅ Ahora verificamos si el objeto completo tiene un nombre válido y su probabilidad es alta
     if (
       highestPrediction.className &&
       knownAgents.includes(highestPrediction.className.trim()) &&
@@ -62,7 +59,6 @@ export const Login = () => {
         Login con Reconocimiento Facial
       </h2>
 
-      {/* Cámara activada aquí */}
       <video
         ref={webcamRef}
         autoPlay

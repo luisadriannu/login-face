@@ -33,7 +33,7 @@
 }
 
 .font-bicubik {
-  font-family: "Bicubik";
+  font-family: "Bicubik" !important;
 }
 
 body {

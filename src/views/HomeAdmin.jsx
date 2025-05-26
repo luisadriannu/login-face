@@ -10,12 +10,12 @@ export const HomeAdmin = () => {
 
       <div
         className={`flex flex-col gap-6 transition-all duration-300 ease-in-out h-fit my-auto  ${
-          isOpen ? "ml-80" : "ml-0"
+          isOpen ? "ml-110" : "ml-0"
         } p-8 flex-1`}
       >
-        <div className="text-white flex items-center gap-2">
+        <div className="text-white flex items-center gap-5">
           <img
-            className="w-80"
+            className="w-70"
             src={GetImageUrl("letras-fbi", "png")}
             alt="Imagen de muestra"
           />
@@ -55,7 +55,7 @@ export const HomeAdmin = () => {
         </div>
 
         <div className="flex items-center text-white gap-8">
-          <div className="relative w-60 h-60 transition-transform duration-400 hover:scale-105 cursor-pointer">
+          <div className="relative w-60 h-70 transition-transform duration-400 hover:scale-105 cursor-pointer">
             <img
               className="absolute inset-0 w-full h-full "
               src={GetImageUrl("marco", "png")}
@@ -73,7 +73,7 @@ export const HomeAdmin = () => {
             </p>
           </div>
 
-          <div className="relative w-60 h-70 transition-transform duration-400 hover:scale-105 cursor-pointer">
+          <div className="relative w-60 h-80 transition-transform duration-400 hover:scale-105 cursor-pointer">
             <img
               className="absolute inset-0 w-full h-full"
               src={GetImageUrl("marco", "png")}
@@ -89,7 +89,7 @@ export const HomeAdmin = () => {
             </p>
           </div>
 
-          <div className="relative w-60 h-60 transition-transform duration-400 hover:scale-105 cursor-pointer">
+          <div className="relative w-60 h-70 transition-transform duration-400 hover:scale-105 cursor-pointer">
             <img
               className="absolute inset-0 w-full h-full"
               src={GetImageUrl("marco", "png")}
