@@ -50,15 +50,25 @@ export const Login = () => {
         navigate("/home-admin");
       }
     } else {
+      // 🔥 Reproducir sonido de alerta y detenerlo después de 3 segundos
+      const audio = new Audio("/public/sounds/alarm.mp3");
+      audio.loop = false;
+      audio.play();
+
+      setTimeout(() => {
+        audio.pause();
+        audio.currentTime = 0; // Reiniciar el sonido para futuras detecciones
+      }, 3000);
+
       setIntruderAlert(true);
-      setTimeout(() => setIntruderAlert(false), 3000); // 🔥 La alerta dura 3 segundos
+      setTimeout(() => setIntruderAlert(false), 3000); // La alerta visual también dura 3 segundos
     }
   };
 
   return (
     <div className="flex items-center justify-center gap-20 relative w-full h-screen bg-black text-white">
       {intruderAlert && (
-        <div className="fixed top-0 left-0 w-full h-full bg-red-800 text-white text-6xl font-bold flex items-center justify-center animate-flicker">
+        <div className="fixed top-0 left-0 w-full h-full bg-red-800 text-white text-6xl font-bold flex items-center justify-center animate-flicker z-[999]">
           🚨 INTRUSO DETECTADO 🚨
         </div>
       )}
