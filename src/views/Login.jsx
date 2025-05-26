@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loadModel, predictFace } from "../utils/faceRecognition";
+import { GetImageUrl } from "../utils/getImageUrl";
 
 export const Login = () => {
   const webcamRef = useRef(null);
@@ -55,30 +56,83 @@ export const Login = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center relative w-full h-screen bg-black text-white">
+    <div className="flex items-center justify-center gap-20 relative w-full h-screen bg-black text-white">
       {intruderAlert && (
         <div className="fixed top-0 left-0 w-full h-full bg-red-800 text-white text-6xl font-bold flex items-center justify-center animate-flicker">
           🚨 INTRUSO DETECTADO 🚨
         </div>
       )}
 
-      <h2 className="text-red-500 text-2xl">Login con Reconocimiento Facial</h2>
+      <div className="flex absolute top-40 left-58 opacity-45">
+        <img
+          className="w-90"
+          src={GetImageUrl("tecnologia", "png")}
+          alt="Imagen de muestra"
+        />
+        <img
+          className="w-90"
+          src={GetImageUrl("tecnologia", "png")}
+          alt="Imagen de muestra"
+        />
+        <img
+          className="w-90 absolute top-38"
+          src={GetImageUrl("tecnologia", "png")}
+          alt="Imagen de muestra"
+        />
+      </div>
 
-      {/* Cámara activada aquí */}
-      <video
-        ref={webcamRef}
-        autoPlay
-        className="border-4 border-red-500 shadow-lg"
-        width="400"
-        height="300"
-      ></video>
+      <div className="text-white flex flex-col">
+        <img
+          className="w-70 ml-28"
+          src={GetImageUrl("letras-fbi", "png")}
+          alt="Imagen de muestra"
+        />
+        <p className="text-[#63DAF1] text-neon text-8xl font-bicubik">AGENTS</p>
+      </div>
 
-      <button
-        onClick={handleDetect}
-        className="bg-blue-500 text-white px-6 py-3 mt-4 hover:bg-blue-700 transition-all duration-300"
-      >
-        Detectar
-      </button>
+      <div className="flex absolute bottom-20 left-58 opacity-45">
+        <img
+          className="w-90"
+          src={GetImageUrl("tecnologia", "png")}
+          alt="Imagen de muestra"
+        />
+        <img
+          className="w-90"
+          src={GetImageUrl("tecnologia", "png")}
+          alt="Imagen de muestra"
+        />
+        <img
+          className="w-90 absolute bottom-38"
+          src={GetImageUrl("tecnologia", "png")}
+          alt="Imagen de muestra"
+        />
+      </div>
+
+      <div className="flex flex-col items-center">
+        <div className="relative w-[600px] h-[480px] overflow-hidden">
+          {/* Video más pequeño */}
+          <video
+            ref={webcamRef}
+            autoPlay
+            muted
+            className="absolute top-[5%] left-[5%] w-[90%] h-[90%] object-cover z-10"
+          ></video>
+
+          {/* Marco más grande */}
+          <img
+            src={GetImageUrl("marco-camara", "png")}
+            alt="Marco de cámara"
+            className="absolute top-0 left-0 w-full h-full z-20 pointer-events-none scale-110"
+          />
+        </div>
+
+        <button
+          onClick={handleDetect}
+          className="bg-[#034655] text-xl rounded-md text-white px-6 py-3 mt-4 hover:bg-[#03465590] transition-all duration-300 cursor-pointer"
+        >
+          ACCEDER
+        </button>
+      </div>
 
       {agentName && (
         <h2 className="text-green-500 text-2xl mt-4 font-mono">
