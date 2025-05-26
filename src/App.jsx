@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router";
+import { Routes, Route } from "react-router-dom";
 import { Login } from "./views/Login";
 import { HomeAdmin } from "./views/HomeAdmin";
 import { LoaderProvider } from "./context/LoaderContext";
@@ -8,6 +8,7 @@ function App() {
   return (
     <LoaderProvider>
       <Loader />
+
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home-admin" element={<HomeAdmin />} />
